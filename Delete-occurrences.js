@@ -12,3 +12,11 @@ With list [20,37,20,21] and number 1, the result would be [20,37,21].
 
 
 // Solution
+
+function deleteNth(arr,x) {
+  let cache = {};
+  return arr.filter(function(n) {
+    cache[n] = (cache[n]||0) + 1;
+    return cache[n] <= x;
+  });
+}
